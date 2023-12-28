@@ -1,0 +1,11 @@
+<svg id="btn_edit_delete" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="그룹_9715" data-name="그룹 9715">
+    <g id="delete" transform="translate(2.564 1.423)">
+      <path id="패스_13384" data-name="패스 13384" d="M13.5,13.5h1.258v7.548H13.5Z" transform="translate(-8.468 -7.21)" fill="#b6bdcb"/>
+      <path id="패스_13385" data-name="패스 13385" d="M20.25,13.5h1.258v7.548H20.25Z" transform="translate(-11.444 -7.21)" fill="#b6bdcb"/>
+      <path id="패스_13386" data-name="패스 13386" d="M4.5,6.75V8.008H5.758V20.589a1.258,1.258,0,0,0,1.258,1.258H17.081a1.258,1.258,0,0,0,1.258-1.258V8.008H19.6V6.75ZM7.016,20.589V8.008H17.081V20.589Z" transform="translate(-4.5 -4.234)" fill="#b6bdcb"/>
+      <path id="패스_13387" data-name="패스 13387" d="M13.5,2.25h5.032V3.508H13.5Z" transform="translate(-8.468 -2.25)" fill="#b6bdcb"/>
+    </g>
+    <rect id="사각형_7861" data-name="사각형 7861" width="20" height="20" fill="none"/>
+  </g>
+</svg>

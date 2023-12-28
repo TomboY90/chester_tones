@@ -1,0 +1,45 @@
+@import 'mixin';
+
+$border-radius: 10px;
+
+$primary: #51156C;
+$secondary: rgba($color:#ffffff, $alpha:0.2);
+$point: #C46C06;
+$background: #F9F9F9;
+$teal: #7dcaae;
+$white: #fff;
+$black: #000;
+
+$title: rgba($black, 0.9);
+$bg: rgba($black, 0.05);
+$line : rgba($color:#000000, $alpha:0.15);
+$desc : rgba($color:#000000, $alpha:0.6);
+
+
+
+
+//font-size
+$fxl: 20px;
+$fl: 16px;
+$fn: 14px;
+$fs: 12px;
+
+//margin
+$mxs: 5px;
+$ms: 10px;
+$mn: 15px;
+$ml: 20px;
+$mxl: 30px;
+
+
+@mixin mobile {
+    @media (max-width: 800px) {
+      @content;
+    }
+  }
+  
+  @mixin tablet {
+    @media (max-width: 1420px) {
+      @content;
+    }
+  }

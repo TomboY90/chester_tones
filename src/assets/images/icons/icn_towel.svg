@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="그룹_261" data-name="그룹 261" transform="translate(-532 -2959)">
+    <g id="사각형_167" data-name="사각형 167" transform="translate(532 2959)" fill="#fff" stroke="rgba(0,0,0,0.15)" stroke-width="1">
+      <rect width="48" height="48" stroke="none"/>
+      <rect x="0.5" y="0.5" width="47" height="47" fill="none"/>
+    </g>
+    <g id="그룹_251" data-name="그룹 251" transform="translate(540.5 2967)">
+      <g id="그룹_257" data-name="그룹 257">
+        <path id="패스_83" data-name="패스 83" d="M9,25H5a.5.5,0,0,1-.5-.5V5.5A2.5,2.5,0,0,1,7,3,.5.5,0,0,1,7,4,1.5,1.5,0,0,0,5.5,5.5V24H9a.5.5,0,0,1,0,1Z"/>
+        <path id="패스_84" data-name="패스 84" d="M7,3H25a2.5,2.5,0,0,1,2.5,2.5v23a.5.5,0,0,1-.5.5H9a.5.5,0,0,1-.5-.5V5.5a1.453,1.453,0,0,0-.439-1.052l-.01-.01A1.453,1.453,0,0,0,7,4,.5.5,0,0,1,7,3ZM26.5,28V5.5A1.5,1.5,0,0,0,25,4H9a2.451,2.451,0,0,1,.5,1.5V28Z"/>
+        <path id="선_83" data-name="선 83" d="M18,.5H0A.5.5,0,0,1-.5,0,.5.5,0,0,1,0-.5H18a.5.5,0,0,1,.5.5A.5.5,0,0,1,18,.5Z" transform="translate(9 21.5)"/>
+        <path id="선_84" data-name="선 84" d="M18,.5H0A.5.5,0,0,1-.5,0,.5.5,0,0,1,0-.5H18a.5.5,0,0,1,.5.5A.5.5,0,0,1,18,.5Z" transform="translate(9 17.5)"/>
+      </g>
+    </g>
+  </g>
+</svg>

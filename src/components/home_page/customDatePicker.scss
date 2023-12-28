@@ -1,0 +1,242 @@
+@import '@assets/scss/_variables.scss';
+
+
+.date-range-picker{
+  width: 100%;
+  height: 400px;
+  display: block;
+  position: relative;
+
+  .rdrMonthAndYearWrapper{
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    top: 20px;
+    height: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    > button{
+      position: absolute;
+      top:0;
+      padding: 0;
+      margin: 0;
+      >i{
+        display: none;
+      }
+
+      &:first-child{
+        left: 0;
+        background: url('@assets/images/icons/icn_arrow-left.svg');
+      }
+      &:last-child{
+        right: 0;
+        background: url('@assets/images/icons/icn_arrow-right.svg');
+      }
+    }
+
+    .rdrMonthAndYearPickers{
+      display: none;
+    }
+  }
+
+  .rdrMonthName{
+    text-align: center;
+    font-size: rem(18);
+    color: rgba($black, 0.9);
+  }
+
+  .rdrDays{
+    gap: 5px 0;
+  }
+
+  .rdrDefinedRangesWrapper{
+    display: none;
+  }
+
+  .rdrMonthAndYearWrapper{
+    span{
+      font-size: rem(26);
+    }
+  }
+
+  .rdrCalendarWrapper{
+    width: 100%;
+  }
+
+  .rdrMonths{
+    width: 100%;
+  }
+  .rdrMonth{
+    width: 50%;
+  }
+  .rdrWeekDay{
+    width: 40px;
+    height: 40px;
+    font-size: rem(14);
+    font-weight: 500;
+    color: rgba($black, 0.9);
+    &:first-child{
+      color: #FF2A2AE5;;
+    }
+  }
+  .rdrDay{
+    height: 40px;
+    &.rdrDayStartOfWeek{
+      &.rdrDayPassive{
+        .rdrDayNumber{
+          span{
+            color: #d5dce0;;
+          }
+        }
+      }
+      .rdrDayNumber{
+        span{
+          color: #FF2A2AE5;
+        }
+      }
+    }
+
+    .rdrDayNumber{
+      z-index: 2;
+      font-size: rem(16);
+      font-weight: 500;
+      color: rgba($black, 0.9);
+    }
+
+    .rdrStartEdge , .rdrEndEdge, {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid $teal;
+      z-index: 2;
+
+      &:before{
+        content: '';
+        position: absolute;
+        height: 40px;
+        width: 33px;
+        left: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        border-top: 1px solid $teal;
+        border-bottom: 1px solid $teal;
+        background: rgba($black, 0.05);
+        z-index: 1;
+      }
+      &:after{
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $teal;
+        z-index: 2;
+      }
+    }
+
+    .rdrStartEdge.rdrEndEdge{
+      &:before{
+        right: auto;
+      }
+    }
+
+    .rdrEndEdge, {
+      &:before {
+        left: auto;
+        right: 50%;
+      }
+    }
+
+    .rdrDayStartOfMonth{
+      left: 50%;
+      top:50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .rdrDayInPreview, .rdrInRange{
+      height: 42px;
+      width: 100%;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      border-top: 1px solid $teal;
+      border-bottom: 1px solid $teal;
+      background: rgba($black, 0.05);
+    }
+
+    .rdrDayStartPreview, .rdrDayEndPreview{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      border: 1px solid $teal;
+      background: rgba(black, 0.05);
+
+    }
+
+    .rdrDayHovered, {
+      height: 42px;
+      width: 100%;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      border-top: 1px solid $teal;
+      border-bottom: 1px solid $teal;
+      background: rgba($black, 0.05);
+      > .rdrEndEdge{
+       display: none;
+      }
+
+    }
+
+  }
+
+  .rdrDayToday{
+    .rdrDayNumber{
+      position: absolute;
+      left: 50%;
+      top:50%;
+      transform: translate(-50%,-50%);
+      width: 40px;
+      height: 40px;
+      background: rgba($black,0.05);
+      border-radius: 50%;
+      span{
+        &:after{
+          display: none;
+        }
+      }
+    }
+  }
+
+  .rdrDayEndOfWeek, .rdrDayStartOfWeek ,.rdrDayEndOfMonth, .rdrDayStartOfMonth{
+    .rdrInRange{
+      border-radius: 0;
+    }
+    .rdrDayInPreview{
+      border-radius: 0;
+      border-left: none;
+      border-right: none;
+    }
+  }
+
+  .rdrInRange ~ .rdrDayNumber{
+    span{
+      color: rgba($black, 0.9) !important;
+    }
+  }
+}
+

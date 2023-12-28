@@ -1,0 +1,12 @@
+@import '@assets/scss/_variables.scss';
+
+
+.modal-overlay{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100dvh;;
+  z-index: 100;
+  background: rgba($black, 0.15);
+}

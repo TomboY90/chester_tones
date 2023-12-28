@@ -1,0 +1,48 @@
+@import '@assets/scss/_variables.scss';
+
+.date-modal{
+  position: absolute;
+  width: 100%;
+  bottom: 100%;
+  z-index: 200;
+}
+
+.date-picker{
+  background: $white;
+  padding: 80px 190px 40px;
+  @include tablet{
+    padding: 20px;
+  }
+}
+
+.modal-footer{
+  height: 80px;
+  padding: 18px 190px;
+  background: $background;
+  display: flex;
+  justify-content: space-between;
+  @include tablet{
+    padding: 20px;
+  }
+
+  .check-in-out{
+    display: flex;
+    gap:70px;
+    align-items: center;
+    span{
+      display: block;
+      font-size: rem(12);
+      color: rgba($black, 0.6);
+      margin-bottom: 4px;
+    }
+    p{
+      font-size: rem(14);
+      font-weight: 500;
+      color: rgba($black, 0.9);
+    }
+  }
+
+  .button{
+    width: 74px;
+  }
+}

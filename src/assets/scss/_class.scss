@@ -1,0 +1,268 @@
+@import 'variables';
+
+:root{
+    --vh: 100%;
+}
+
+.flex-between {
+    @include flex;
+}
+
+.flex {
+    display: flex;
+}
+
+.center {
+    @include flex(center, center);
+}
+
+.flex-top {
+    display: flex;
+    align-items: flex-start !important;
+}
+
+.flex-bottom {
+    display: flex;
+    align-items: flex-end !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+@for $i from 0 to 101 {
+    .w-#{$i} {
+        width: ($i * 1%) !important;
+    }
+    .h-#{$i} {
+        height: ($i + 0px) !important;
+    }
+    .mr-#{$i} {
+        margin-right: ($i + 0px) !important;
+    }
+    .mt-#{$i} {
+        margin-top: ($i + 0px) !important;
+    }
+    .ml-#{$i} {
+        margin-left: ($i + 0px) !important;
+    }
+    .mb-#{$i} {
+        margin-bottom: ($i + 0px) !important;
+    }
+    .pr-#{$i} {
+        padding-right: ($i + 0px) !important;
+    }
+    .pt-#{$i} {
+        padding-top: ($i + 0px) !important;
+    }
+    .pl-#{$i} {
+        padding-left: ($i + 0px) !important;
+    }
+    .pb-#{$i} {
+        padding-bottom: ($i + 0px) !important;
+    }
+    .fs-#{$i} {
+        font-size: ($i + 0px) !important;
+    }
+}
+
+.c-title{
+    color: rgba($black, 0.9) !important;
+}
+
+html{
+    font-size: 16px;
+    overflow-x: hidden;
+    @include tablet{
+        font-size: 14px;
+    }
+    @include mobile{
+        font-size: 10px;
+    }
+}
+
+.inner{
+    width: 1420px;
+    margin: 0 auto;
+    transition: .2s;
+    @include tablet{
+        width: 800px;
+    }
+    @include mobile{
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+.reservation-button{
+    all:unset;
+    width: 140px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    background: #7dcaae;
+    color: rgba($color:$white, $alpha:0.95);
+    &.large{
+        height: 64px;
+        width: 200px;
+        font-size: 16px;
+    }
+
+    &.line{
+        background: transparent;
+        border: 1px solid $line;
+        color: rgba($black, 0.9)
+    }
+
+    @include mobile{
+        font-size: 12px;
+        width: 100px;
+        &.large{
+            font-size: 14px;
+        }
+    }
+}
+
+.main-title{
+    h4{
+        font-weight: 300;
+        font-size: rem(18);
+        color: rgba($white, 0.95);
+        margin-bottom: 32px;
+    }
+    h2{
+        font-family: 'Libre basker',sans-serif;
+        font-size: rem(80);
+        font-weight: 700;
+        color: rgba($white, 0.95);
+        width: 70%;
+    }
+    @include tablet{
+        h2{
+            font-size: rem(60);
+        }
+    }
+
+    @include mobile{
+        padding: 0 40px;
+        h4{
+            font-size: 16px;
+        }
+        h2{
+           font-size: 40px;
+            width: 100%;
+        }
+    }
+}
+
+main{
+    position: relative;
+    min-height: calc(100dvh - 348px);
+}
+
+.bread-crumb{
+    display: flex;
+    gap: 24px;
+    font-weight: 500;
+    color: rgba($black, 0.25);
+    font-size: rem(14);
+    white-space: nowrap;
+    >li{
+        cursor: pointer;
+        &:first-child{
+            &:before{
+                display: none;
+            }
+        }
+        &:last-child{
+            color: rgba($black,0.9);
+            cursor: default;
+        }
+        &:before{
+            content: '';
+            display: inline-block;
+            width: 24px;
+            background: $line;
+            height: 1px;
+            margin-right: 24px;
+            vertical-align: middle;
+        }
+    }
+}
+.bread-crumb-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 64px;
+    @include mobile{
+        display: block;
+        margin-bottom: 30px;
+        .bread-crumb{
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+            gap: 8px;
+            >li{
+                white-space: nowrap;
+                &:before{
+                    width: 12px;
+                    margin-right: 8px;
+                }
+            }
+        }
+        .small-line-button{
+            margin: 0 0 0 auto;
+        }
+    }
+}
+
+.small-line-button{
+    color: $primary;
+    padding-bottom: 8px;
+    width: 120px;
+    text-align: right;
+    border-bottom:1px solid $primary;
+    cursor: pointer;
+    transition: .2s;
+    font-size: rem(14);
+    font-weight: 500;
+    white-space: nowrap;
+    &:hover{
+        width: 280px;
+    }
+}
+
+.button-group{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.close-icon{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 2;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    @include tablet{
+        width: 12px;
+        height: 12px;
+        top:20px;
+        right: 20px;
+    }
+}

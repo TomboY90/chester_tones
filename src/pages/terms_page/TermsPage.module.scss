@@ -1,0 +1,98 @@
+@import '@assets/scss/_variables.scss';
+
+.terms-page{
+  padding-top: 100px;
+}
+
+
+.tab-list{
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid $title;
+  padding: 70px 0 0;
+  >li{
+    width: 25%;
+    height: 50px;
+    font-size: rem(16);
+    font-weight: 300;
+    color: $title;
+    background: $bg;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:hover, &.active{
+      background: $title;
+      color: $white;
+      font-weight: 500;
+    }
+  }
+  @include mobile{
+    flex-wrap: wrap;
+    border-bottom: 0;
+    >li{
+      width: calc(50% - 5px);
+      border-bottom: 1px solid $black;
+      height: 40px;
+      font-size: 14px;
+    }
+  }
+}
+
+.terms-desc{
+  h6{
+    color: $title;
+    margin: 50px 0;
+    font-size: rem(16);
+    font-weight: 300;
+  }
+  >div{
+    margin-bottom: 60px;
+    h3{
+      color: $title;
+      font-weight: 500;
+      font-size: rem(20);
+      margin-bottom: 24px;
+    }
+    p{
+      font-size: rem(14);
+      color: $desc;
+    }
+    &:last-child{
+      margin-bottom: 100px;
+    }
+  }
+
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid rgba($black, 0.5);
+    margin: 10px 0;
+
+    th, td {
+      border: 1px solid rgba($black, 0.5);
+      text-align:center;
+    }
+
+    th{
+      background: rgba($black, 0.05);
+      font-weight: 500;
+    }
+  }
+  @include mobile{
+    >div{
+      margin-bottom: 40px;
+    }
+    h6{
+      margin: 32px 0;
+      font-size: 12px;
+    }
+    h3{
+      font-size: 14px;
+    }
+    p{
+      font-size: 12px;
+    }
+  }
+}

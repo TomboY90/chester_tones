@@ -1,0 +1,113 @@
+@import '@assets/scss/_variables.scss';
+
+
+.footer{
+  background: $background;
+}
+
+.footer-top{
+  padding: 40px 0;
+
+  h1{
+   width: 312px;
+    height: 103px;
+    background: url('@assets/images/bg/footer_logo1.svg') center center no-repeat;
+    background-size: cover;
+    margin-bottom: 40px;
+    &:hover{
+      background: url('@assets/images/bg/footer_logo2.svg') center center no-repeat;
+      background-size: cover;
+    }
+  }
+  @include mobile{
+    padding: 20px !important;
+    h1{
+      width: 160px;
+      height: 50px;
+    }
+  }
+}
+
+.terms-list{
+  display: flex;
+  font-weight: 500;
+  color: rgba($black,0.9);
+  gap: 35px;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  >li{
+    cursor: pointer;
+  }
+  @include mobile{
+    gap: 15px;
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+}
+
+.address{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  >address{
+    font-size: rem(14);
+    color: rgba($black,0.6);
+  }
+  @include mobile{
+    >address{
+      font-size: 12px;
+    }
+    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.footer-bottom{
+  padding: 10px 0;
+  border-top: 1px solid rgba($color:$black, $alpha:0.15);
+  p{
+    font-size: rem(12);
+    color: rgba($black,0.25);
+  }
+}
+
+.sns-list{
+  display: flex;
+  gap: 16px;
+  li{
+    width: 32px;
+    height: 32px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat ;
+    cursor: pointer;
+
+    &.kakao{
+      background-image: url('@assets/images/icons/kakao_gray.svg');
+      &:hover{
+        background-image: url('@assets/images/icons/kakao_color.svg');
+      }
+    }
+    &.youtube{
+      width: 45px;
+      background-image: url('@assets/images/icons/youtube_gray.svg');
+      &:hover{
+        background-image: url('@assets/images/icons/youtube_color.svg');
+      }
+    }
+    &.facebook{
+      background-image: url('@assets/images/icons/facebook_gray.svg');
+      &:hover{
+        background-image: url('@assets/images/icons/facebook_color.svg');
+      }
+    }
+    &.insta{
+      background-image: url('@assets/images/icons/insta_gray.svg');
+      &:hover{
+        background-image: url('@assets/images/icons/insta_color.png');
+      }
+    }
+
+  }
+}

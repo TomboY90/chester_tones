@@ -1,0 +1,66 @@
+@import '@assets/scss/_variables.scss';
+
+
+.reservation-group{
+  display: flex;
+  justify-content: space-between;
+  @include tablet{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    >ul{
+      &:first-child{
+        width: 100%;
+        gap: 0;
+      }
+      &:last-child{
+        width: 100%;
+        > li{
+          width: 100%;
+        }
+        button{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+
+  > ul{
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    &:first-child{
+      cursor: pointer;
+    }
+  }
+  h4{
+    font-size: rem(14);
+    color: rgba($color: $white, $alpha: 0.65) ;
+    margin-bottom: 8px;
+  }
+  h3{
+    font-size: rem(26);
+    color: rgba($color: $white, $alpha: 0.9);
+  }
+  li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    &.reservation-option{
+      cursor: pointer;
+      gap: 72px;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      h4{
+        text-align: center;
+      }
+      h3{
+        text-align: center;
+      }
+    }
+  }
+}
