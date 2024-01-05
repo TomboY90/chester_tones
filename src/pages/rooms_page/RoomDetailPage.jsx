@@ -33,9 +33,9 @@ const RoomDetailPage = () => {
             <li onClick={() => navigate(`/rooms/${id}`)}>{roomData[id].enName.toUpperCase()}</li>
             <li>{roomData[id].rooms[sub].enName.toUpperCase()}</li>
           </ul>
-          <p className="small-line-button" onClick={linkTo}>
-            객실 예약하러 가기
-          </p>
+          {/*<p className="small-line-button" onClick={linkTo}>*/}
+          {/*  객실 예약하러 가기*/}
+          {/*</p>*/}
         </div>
 
         <ImgSlider imgNum={room.imgNum} />
@@ -52,35 +52,38 @@ const RoomDetailPage = () => {
           </div>
           <ul className={classes['room-basic-info']}>
             <li>
-              <span>객실 크기</span>
-              <p>{room.size}</p>
-            </li>
-            <li>
-              <span>객실 체크인</span>
+              <span>체크 인</span>
               <p>15:00</p>
-            </li>
-            <li>
-              <span>객실 기준인원</span>
-              <p>{room.default}인</p>
-            </li>
-            <li>
-              <span>룸 구성</span>
-              <p>{room.roomType}</p>
             </li>
             <li>
               <span>체크 아웃</span>
               <p>11:00</p>
             </li>
             <li>
-              <span>최대인원</span>
+              <span>기준 인원</span>
+              <p>{room.default}인</p>
+            </li>
+            <li>
+              <span>최대 인원</span>
               <p>{room.max}인</p>
             </li>
             <li>
-              <span>베드타입</span>
+              <span>룸 구성</span>
+              <p>{room.roomType}</p>
+            </li>
+            <li>
+              <span>베드 타입</span>
               <p>{room.bedType}</p>
             </li>
             <li>
-              <span>이용문의</span>
+              <span>객실 크기</span>
+              <div>
+                <p>전용 면적 {room.exSize} </p>
+                <p>분양 면적 {room.saSize} </p>
+              </div>
+            </li>
+            <li>
+              <span>이용 문의</span>
               <div>
                 <p>Tel. 033.673.7000</p>
                 <p>Mail. rsvn@chestertons.co.kr</p>
@@ -110,12 +113,12 @@ const RoomDetailPage = () => {
                 </div>
               </li>
               <li>
-                <p>전화기, 냉장고, 세탁기, 커피포트</p>
+                <p>전화기, 냉장고, 커피포트</p>
                 <div>
                   <img src={portIcon} alt="port" />
                   <img src={phoneIcon} alt="phone" />
                   <img src={refrigeratorIcon} alt="refrigerator" />
-                  <img src={washerIcon} alt="washer" />
+                  {/*<img src={washerIcon} alt="washer" />*/}
                 </div>
               </li>
               <li>
@@ -134,30 +137,35 @@ const RoomDetailPage = () => {
           <div>
             <h4>이용안내</h4>
             <h6>
-              - 체크인은 15시, 체크아웃은 11시 기준입니다. 기준 시간외 사용(Early Check in & Late
-              Check out)은 시간당 20,000원(VAT 포함)이 부과되며,
+              - 체크인은 15:00 , 체크아웃은 11:00 입니다.
               <br />
-              15시이후에는 당일 1박의 요금이 부과됩니다. 성수기 7~8월달에는 레이트 체크아웃 시간이
-              탄력적으로 운영되고 있어 프론트 문의 부탁드립니다.
-              <br /> - 전 객실과 업장에서는 금연입니다. 객실 내 흡연 시 별도의 20만원의 청소 비용이
-              부과됩니다.
-              <br /> - 기준인원 외 인원추가는 별도의 금액이 부과되며, 성인은 10,000원, 아동은
-              5,000원이 박 당 부과됩니다.
-              <br /> - 침구 추가 시 20,000원이 부과됩니다.
-              <br /> - 린캠페인에 동참하고자 객실 정비 서비스(침구류 교체 포함)는 3박부터 무료로
-              제공되며, 별도 요청시에는 요금이 부과되니 프론트로 문의 바랍니다. (1룸 20,000원, 2룸
-              40,000원, 3룸 60,000원)
-              <br /> - 안내견을 제외한 애완동물의 동반 투숙은 금지되어 있습니다. 애완동물은 공용지역
-              또는 입장이 불가합니다. 적발 시 특수청소비(20만원)이 발생됩니다.
-              <br /> - 외부 배달음식은 규정 상 로비에서 수령을 해 주시기 바랍니다.
-              <br /> - 환경부 일회용품 무상제공 금지에 의거하여 객실 내 면도기, 칫솔 등 일회용품은
+              기준 시간 외 사용 (Early Check In & Late Check Out) 은 시간 당 20,000원 (VAT 포함) 이
+              부과되며
+              <br /> 15시 이후는 당일 1박 요금이 부과됩니다.
+              <br /> 성수기, 연휴기간 Early Check In & Late Check Out 시간은 탄력적으로 운영됩니다.
+              (문의 사항은 프론트 데스크로 부탁 드립니다.)
+              <br /> - 전 객실과 업장 내에서는 '금연' 입니다.
+              <br /> (객실 내 흡연시 별도 20만원의 청소 비용이 부과됩니다.)
+              <br /> - 기준 인원 외 추가는 별도의 금액이 부과됩니다. (1박당 성인10,000원, 소인
+              5,000원)
+              <br /> - 침구 추가시 20,000원의 비용이 부과됩니다.
+              <br /> - 그린 캠페인에 동참하고자 객실 정비 서비스 (침구류 교체 포함)는 3박부터 무료로
+              제공되며,
+              <br /> - 환경부 일회용품 무상제공 금지 정책에 따라 객실 내에 면도기, 칫솔 등이
               비치되어 있지 않습니다.
-              <br /> - 객실내 취사는 안 되오니 양해 바랍니다.
-              <br /> - 쾌적한 객실환경을 위하여 객실 내 에서 회나 게 찜 종류의 음식물 섭취는
-              삼가하여 주시기 바랍니다. 냄새로 인하여 다음 손님에게 피해를 줄 수 있습니다.
-              <br /> - 일반쓰레기와 재활용쓰레기 및 음식물쓰레기는 지상 1층 주차장 출입구
-              분리수거장에 배출 부탁드립니다. <br />
-              (심각한 오염과 쓰레기 적발 시 특수청소를 위한 비용이 부과됩니다)
+              <br /> 별도 요청시에는 요금이 부과되니 프론트 데스크로 문의 바랍니다. (원룸 20,000원,
+              투룸 40,000원, 쓰리룸 60,000원)
+              <br /> - 안내견을 제외한 애완 동물의 동반 투숙은 금지되어 있습니다. <br />
+              애완동물은 공용구역 또는 객실 내 입장이 불가 하며, 적발 시 특수 청소비 (20만원)가
+              발생됩니다.
+              <br /> - 외부 배달 음식은 로비에서 수령하시기 바랍니다.
+              <br /> - 객실 내에서의 취사는 불가합니다.
+              <br /> - 쾌적한 객실 환경을 위해 객실 내에서 회, 게찜류 음식물을 섭취하는 것은 자제해
+              주시기 바랍니다.
+              <br /> 냄새로 인하여 다음 고객님에게 불편을 줄 수 있습니다.
+              <br /> - 쓰레기는 일반, 재활용, 그리고 음식물 쓰레기로 구분하여 1층 주차장 출입구에
+              배출하여 주시기 바랍니다.
+              <br /> (심각한 오염 및 쓰레기 미분리 시에는 특수 청소 비용이 부과됩니다.)
             </h6>
           </div>
           <div>

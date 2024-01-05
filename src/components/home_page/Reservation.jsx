@@ -25,11 +25,10 @@ const Reservation = () => {
   };
 
   return (
-    <figure
-      style={{ position: 'absolute', left: '50%', bottom: '15%', transform: 'translateX(-50%)' }}>
+    <figure className={`${classes['reservation-wrapper']} inner`}>
       {openDatePicker && <DatePicker onClose={() => setOpenDatePicker(false)} />}
       {openInfoPicker && <InfoPicker onClose={() => setOpenInfoPicker(false)} />}
-      <div className={`${classes['reservation-group']} inner`}>
+      <div className={`${classes['reservation-group']}`}>
         <ul>
           <li>
             <h4>RESERVATION</h4>

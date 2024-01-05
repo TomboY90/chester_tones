@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { forwardRef, useEffect } from 'react';
 import classes from './Footer.module.scss';
 
 import { useNavigate } from 'react-router-dom';
-const Footer = () => {
+import useIntersect from '../../hooks/useIntersect.jsx';
+const Footer = forwardRef(({}, ref) => {
   const navigate = useNavigate();
 
   return (
-    <footer className={classes.footer}>
-      <div className={`${classes['footer-top']} inner`}>
+    <footer className={classes.footer} ref={ref}>
+      <div className={`inner ${classes['footer-top']} `}>
         <h1></h1>
         <ul className={classes['terms-list']}>
           <li onClick={() => navigate('terms/0')}>이용약관</li>
@@ -47,6 +48,7 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+});
+Footer.displayName = 'Footer';
 
 export default Footer;

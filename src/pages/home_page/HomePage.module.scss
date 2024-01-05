@@ -1,7 +1,7 @@
 @import '@assets/scss/_variables.scss';
 
 .visual{
-  height: 100dvh;
+  height: 100vh;
   &:before{
     content: "";
     display: block;
@@ -10,7 +10,7 @@
     top: 0;
     background: url('@assets/images/bg/bg_img1.png') center center no-repeat;
     background-size: cover;
-    height:100dvh;
+    height:100vh;
     width: 100vw;
     z-index: -1;
   }
@@ -20,9 +20,9 @@
     position: absolute;
     left: 0;
     top: 0;
-    background: rgba($color:$black, $alpha:0.52);
+    background: rgba($color:$black, $alpha:0.7);
     background-size: cover;
-    height: 100dvh;
+    height: 100vh;
     width: 100vw;
     z-index: -1;
   }
@@ -51,5 +51,9 @@
   p{
     font-size: rem(18);
     font-weight: 300;
+  }
+
+  &.temp {
+    font-family: 'Libre basker',sans-serif;
   }
 }

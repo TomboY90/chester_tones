@@ -1,0 +1,56 @@
+@import '@assets/scss/_variables.scss';
+
+
+.kakao_button_wrapper{
+  width: 72px;
+  height: 56px;
+  position: fixed;
+  border-radius: 32px;
+  right: 60px;
+  bottom: 60px;
+  background: #FAE100;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  transition: .2s;
+  cursor: pointer;
+
+  &:hover{
+    width: 210px;
+    gap: 10px;
+    > p{
+      width: fit-content;
+      transform: scaleX(1);
+    }
+  }
+
+  >img{
+    width: 32px;
+    height: 32px;
+  }
+
+  > p{
+    white-space: nowrap;
+    width: 0;
+    transform-origin: left center;
+    transform: scaleX(0);
+  }
+
+
+  @include mobile{
+    width: 48px;
+    height: 48px;
+    right: 24px;
+    bottom: 24px;
+    margin: 0;
+    >img{
+      width: 30px;
+      height: 30px;
+    }
+    &:hover{
+      all:unset;
+    }
+  }
+
+}

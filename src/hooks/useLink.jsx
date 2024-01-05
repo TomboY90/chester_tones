@@ -19,7 +19,8 @@ const UseLink = () => {
 
   // 최종 URL 생성
   return () => {
-    window.open(`${destinationSite}?${queryString}`);
+    // window.open(`${destinationSite}?${queryString}`);
+    alert('서비스 준비중입니다.');
   };
 };
 

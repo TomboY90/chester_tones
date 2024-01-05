@@ -1,33 +1,27 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import Header from '@components/ui/Header.jsx';
 import Footer from '@components/ui/Footer.jsx';
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import KaKaoButton from '@components/ui/KaKaoButton.jsx';
+import useIntersect from '../../hooks/useIntersect.jsx';
 
 const RootLayout = () => {
   const location = useLocation();
+
+  const [target, isView] = useIntersect(() => {}, { rootMargin: '2px', threshold: 0.1 });
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  // const setScreenHeight = () => {
-  //   const vh = window.innerHeight * 0.01;
-  //   document.documentElement.style.setProperty('--vh', `${vh}px`);
-  // };
-  //
-  // useEffect(() => {
-  //   setScreenHeight();
-  //   // resize 이벤트가 발생하면 다시 계산하도록 아래 코드 추가
-  //   window.addEventListener('resize', setScreenHeight);
-  //   return () => window.removeEventListener('resize', setScreenHeight);
-  // }, []);
   return (
     <>
       <Header />
-      <main>
+      <main style={{ position: 'relative' }}>
         <Outlet />
+        <KaKaoButton stop={isView} />
       </main>
-      {location.pathname !== '/' && <Footer />}
+      <Footer ref={target} />
     </>
   );
 };

@@ -120,8 +120,8 @@
       &:before{
         content: '';
         position: absolute;
-        height: 40px;
-        width: 33px;
+        height: 40.5px;
+        width: 93%;
         left: 50%;
         top: 50%;
         transform: translateY(-50%);
@@ -129,6 +129,9 @@
         border-bottom: 1px solid $teal;
         background: rgba($black, 0.05);
         z-index: 1;
+        @include tablet(){
+          width: 67%;
+        }
       }
       &:after{
         content: '';
@@ -154,6 +157,10 @@
       &:before {
         left: auto;
         right: 50%;
+        width: 94%;
+        @include tablet(){
+          width: 68%;
+        }
       }
     }
 

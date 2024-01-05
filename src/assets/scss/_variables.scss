@@ -16,8 +16,6 @@ $line : rgba($color:#000000, $alpha:0.15);
 $desc : rgba($color:#000000, $alpha:0.6);
 
 
-
-
 //font-size
 $fxl: 20px;
 $fl: 16px;
@@ -39,7 +37,7 @@ $mxl: 30px;
   }
   
   @mixin tablet {
-    @media (max-width: 1420px) {
+    @media (max-width: 1400px) {
       @content;
     }
   }

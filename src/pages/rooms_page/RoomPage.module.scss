@@ -252,7 +252,7 @@
           margin-bottom: 0;
         }
           p{
-            font-size: rem(18);
+            font-size: 16px;
             font-weight: 300;
             color: rgba($black, 0.9);
             margin-bottom: 8px;
@@ -325,7 +325,7 @@
     max-width: 1000px;
     font-size: rem(16);
     font-weight: 300;
-    color: rgba($black, 0.6);
+    color: rgba($black, 0.9);
     word-break: keep-all;
     line-height: 2;
   }
@@ -355,9 +355,13 @@
   gap: 80px;
   >li{
     width: 250px;
+
   }
   @include mobile{
     flex-direction: column;
     gap: 16px;
+    h5{
+      margin-bottom: 0;
+    }
   }
 }

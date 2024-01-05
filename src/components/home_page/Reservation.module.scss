@@ -1,9 +1,17 @@
 @import '@assets/scss/_variables.scss';
 
+.reservation-wrapper{
+  position: absolute;
+  left: 50%;
+  bottom: 15%;
+  transform: translateX(-50%);
+}
 
 .reservation-group{
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
   @include tablet{
     flex-wrap: wrap;
     justify-content: center;
