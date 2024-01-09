@@ -11,7 +11,7 @@ const RoomList = ({ data, id }) => {
   return (
     <li onClick={() => navigate(`detail/${data.id}`)}>
       <div className={classes['img-box']}>
-        <img src={`/images/room_img/${id}/${data.id}/main_img.png`} alt={data.enName} />
+        <img src={`/images/room_img/${id}/${data.id}/main_img.jpg`} alt={data.enName} />
         <div className={classes['hover-box']}>
           <div>
             <p>객실 자세히보기</p>

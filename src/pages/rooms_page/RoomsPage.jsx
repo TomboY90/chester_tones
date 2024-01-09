@@ -10,9 +10,9 @@ const RoomsPage = () => {
 
   useEffect(() => {
     if (sub) {
-      setImgUrl(`/images/room_img/${id}/${sub}/main_img.png`);
+      setImgUrl(`/images/room_img/${id}/${sub}/main_img.jpg`);
     } else {
-      setImgUrl(`/images/room_img/${id}/0/main_img.png`);
+      setImgUrl(`/images/room_img/${id}/0/main_img.jpg`);
     }
   }, [sub, id]);
 

@@ -28,7 +28,7 @@ const ImgSlider = ({ imgNum }) => {
     let arr = [];
     // eslint-disable-next-line for-direction
     for (let i = 1; i <= imgNum; i++) {
-      let url = `/images/room_img/${id}/${sub}/img_${i}.png`;
+      let url = `/images/room_img/${id}/${sub}/img_${i}.jpg`;
       arr.push(url);
     }
     setImgs(() => [...arr]);

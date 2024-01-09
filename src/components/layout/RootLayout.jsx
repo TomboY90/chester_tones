@@ -19,7 +19,7 @@ const RootLayout = () => {
       <Header />
       <main style={{ position: 'relative' }}>
         <Outlet />
-        <KaKaoButton stop={isView} />
+        {/*<KaKaoButton stop={isView} />*/}
       </main>
       <Footer ref={target} />
     </>
