@@ -38,4 +38,8 @@ body{
   font-family: 'Noto Sans KR',sans-serif;
   font-size: rem(16);
   line-height: 1.5;
+  &.overlay {
+    height: 100vh;
+    overflow: hidden;
+  }
 }
