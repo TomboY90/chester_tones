@@ -37,7 +37,7 @@
 
 .close-button {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-top: 6px;
   > p {
     cursor: pointer;
@@ -45,6 +45,11 @@
     font-size: 12px;
     vertical-align: middle;
     font-weight: 500;
+
+    &.today{
+      margin-top: 2px;
+      font-weight: 400;
+    }
 
     img {
       width: 8px;
