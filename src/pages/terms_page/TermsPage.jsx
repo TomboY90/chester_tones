@@ -13,7 +13,6 @@ const TermsPage = () => {
   const navigate = useNavigate();
 
   let contents = () => {
-    console.log(type);
     switch (type) {
       case '0':
         return <Terms />;

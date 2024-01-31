@@ -4,9 +4,8 @@ import classes from '@pages/rooms_page/RoomPage.module.scss';
 import tvIcon from '@assets/images/icons/icn_tv.svg';
 import wifiIcon from '@assets/images/icons/icn_wifi.svg';
 import portIcon from '@assets/images/icons/icn_port.svg';
-import phoneIcon from '@assets/images/icons/icn_phone.svg';
 import refrigeratorIcon from '@assets/images/icons/icn_refrigerator.svg';
-import washerIcon from '@assets/images/icons/icn_washer.svg';
+import bidetIcon from '@assets/images/icons/icn_bidet.svg';
 import towelIcon from '@assets/images/icons/icn_towel.svg';
 import shampooIcon from '@assets/images/icons/icn_shampoo.svg';
 import dryerIcon from '@assets/images/icons/icn_dryer.svg';
@@ -42,7 +41,9 @@ const RoomDetailPage = () => {
 
         <article className={`${classes['title-box']} inner`}>
           <h2>{room.korName}</h2>
+
           <p>{room.desc}</p>
+          {room.korName.includes('노뷰') && <em>* 3-6층 / 전망없음</em>}
         </article>
 
         <article className={`inner`}>
@@ -113,20 +114,24 @@ const RoomDetailPage = () => {
                 </div>
               </li>
               <li>
-                <p>전화기, 냉장고, 커피포트</p>
+                <p>냉장고, 커피포트</p>
                 <div>
-                  <img src={portIcon} alt="port" />
-                  <img src={phoneIcon} alt="phone" />
                   <img src={refrigeratorIcon} alt="refrigerator" />
-                  {/*<img src={washerIcon} alt="washer" />*/}
+                  <img src={portIcon} alt="port" />
                 </div>
               </li>
               <li>
                 <p>바스&페이스 타올, 헤어드라이기, 샴푸, 트리트먼트, 바디워시, 핸드워시</p>
                 <div>
                   <img src={towelIcon} alt="towel" />
-                  <img src={shampooIcon} alt="shampoo" />
                   <img src={dryerIcon} alt="dryer" />
+                  <img src={shampooIcon} alt="shampoo" />
+                </div>
+              </li>
+              <li>
+                <p>비데</p>
+                <div>
+                  <img src={bidetIcon} alt="bidet" />
                 </div>
               </li>
             </ul>

@@ -6,8 +6,8 @@ import ModalComponent, { ModalOverlay } from '@components/ui/ModalComponent.jsx'
 import popImg from '@assets/images/bg/popup_img.png';
 import { useNavigate } from 'react-router-dom';
 const HomePage = () => {
-  /* const [isPop, setIsPop] = useState(true);
-  const navigate = useNavigate(); */
+  /*  const [isPop, setIsPop] = useState(true);
+  const navigate = useNavigate();*/
 
   return (
     <>
@@ -26,8 +26,7 @@ const HomePage = () => {
           <h2 className={`${classes['main-text']} ${classes.temp}`}>COMING SOON</h2>
         </article>
       </section>
-
-      {/*{isPop &&
+      {/* {isPop &&
         createPortal(
           <ModalOverlay>
             <ModalComponent
