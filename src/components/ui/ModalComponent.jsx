@@ -9,7 +9,11 @@ export const ModalOverlay = ({ children }) => {
     document.querySelector('body').classList.add('overlay');
     return () => document.querySelector('body').classList.remove('overlay');
   }, []);
-  return <div className={classes['modal-overlay']}>{children}</div>;
+  return (
+    <div className={classes['modal-overlay']}>
+      <div className={classes.modal_group_wrapper}>{children}</div>{' '}
+    </div>
+  );
 };
 
 const ModalComponent = ({ img, onClick, position, onClose }) => {
