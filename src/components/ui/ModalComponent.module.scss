@@ -22,6 +22,15 @@
   @include mobile {
     max-width: 90%;
   }
+  &.left{
+    left: 2%;
+    transform: translate(0% ,-50%);
+  }
+  &.right{
+    left: auto;
+    right: 2%;
+    transform: translate(0% ,-50%);
+  }
 }
 
 .img-wrapper {

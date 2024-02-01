@@ -3,11 +3,19 @@ import classes from './HomePage.module.scss';
 import Reservation from '@components/home_page/Reservation.jsx';
 import { createPortal } from 'react-dom';
 import ModalComponent, { ModalOverlay } from '@components/ui/ModalComponent.jsx';
-import popImg from '@assets/images/bg/popup_img.png';
+import leftPop from '@assets/images/bg/left_pop.png';
+import centerPop from '@assets/images/bg/center_pop.png';
+import rightPop from '@assets/images/bg/right_pop.png';
 import { useNavigate } from 'react-router-dom';
 const HomePage = () => {
-  /*  const [isPop, setIsPop] = useState(true);
-  const navigate = useNavigate();*/
+  const [isLeftPop, setIsLeftPop] = useState(true);
+  const [isCenterPop, setIsCenterPop] = useState(true);
+  const [isRightPop, setIsRightPop] = useState(true);
+  const navigate = useNavigate();
+
+  const moveTo = (url) => {
+    window.open(url, '_blank');
+  };
 
   return (
     <>
@@ -26,17 +34,47 @@ const HomePage = () => {
           <h2 className={`${classes['main-text']} ${classes.temp}`}>COMING SOON</h2>
         </article>
       </section>
-      {/* {isPop &&
+      {(isLeftPop || isCenterPop || isRightPop) &&
         createPortal(
           <ModalOverlay>
-            <ModalComponent
-              img={popImg}
-              onClick={() => navigate('/rooms/0')}
-              onClose={() => setIsPop(false)}
-            />
+            {isLeftPop && (
+              <ModalComponent
+                position="left"
+                img={leftPop}
+                onClick={() =>
+                  moveTo(
+                    'https://docs.google.com/forms/d/e/1FAIpQLScPMNRjIQYUuot268OW-PZbbAM-S9xDY5Sue8adBplihKysRw/viewform'
+                  )
+                }
+                onClose={() => setIsLeftPop(false)}
+              />
+            )}
+            {isCenterPop && (
+              <ModalComponent
+                img={centerPop}
+                onClick={() =>
+                  moveTo(
+                    'https://docs.google.com/forms/d/e/1FAIpQLScBU2aTPm60OIcpgce00J3XBtCcRijKAx3M9bY0sJqaNQXB8w/viewform'
+                  )
+                }
+                onClose={() => setIsCenterPop(false)}
+              />
+            )}
+            {isRightPop && (
+              <ModalComponent
+                position="right"
+                img={rightPop}
+                onClick={() =>
+                  moveTo(
+                    'https://docs.google.com/forms/d/e/1FAIpQLSdEkUr1efN4v2uwSQuHgVImFMGkoNLyv85IYBvHSIvY_HAKMQ/viewform'
+                  )
+                }
+                onClose={() => setIsRightPop(false)}
+              />
+            )}
           </ModalOverlay>,
           document.getElementById('modal')
-        )}*/}
+        )}
     </>
   );
 };
