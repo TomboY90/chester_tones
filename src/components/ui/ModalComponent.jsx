@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import classes from './ModalComponent.module.scss';
 import closeIcon from '@assets/images/icons/icn_close.svg';
 import useCookie from '../../hooks/useCookie.jsx';
+import dayjs from 'dayjs';
 
 export const ModalOverlay = ({ children }) => {
   useEffect(() => {
@@ -16,7 +17,7 @@ export const ModalOverlay = ({ children }) => {
   );
 };
 
-const ModalComponent = ({ img, onClick, position, onClose }) => {
+const ModalComponent = ({ img, onClick, expire, position, onClose }) => {
   const { setCookie, getCookie } = useCookie();
 
   // 쿠키의 유효기한을 지정하는 함수
@@ -35,6 +36,9 @@ const ModalComponent = ({ img, onClick, position, onClose }) => {
 
   useEffect(() => {
     if (getCookie(`LeBleu_popup_${position}`)) {
+      onClose();
+    }
+    if (expire && dayjs().isAfter(dayjs(expire))) {
       onClose();
     }
   }, []);

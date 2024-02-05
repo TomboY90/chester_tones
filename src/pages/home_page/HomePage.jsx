@@ -41,6 +41,7 @@ const HomePage = () => {
               <ModalComponent
                 position="left"
                 img={leftPop}
+                expire="2024-02-07"
                 onClick={() =>
                   moveTo(
                     'https://docs.google.com/forms/d/e/1FAIpQLScPMNRjIQYUuot268OW-PZbbAM-S9xDY5Sue8adBplihKysRw/viewform'
