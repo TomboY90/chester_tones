@@ -19,7 +19,7 @@ const Footer = forwardRef(({}, ref) => {
         <div className={classes.address}>
           <address>
             25009 강원도 양양군 강현면 일출로 47 Tel. 033.673-7000 Fax. 033.632.0235 E-mail.
-            admin_naksan@chestertons.co.kr
+            naksan_rsvn@chestertons.co.kr
             <br /> 체스터톤스르부르낙산 주식회사 158-81-02460
           </address>
 

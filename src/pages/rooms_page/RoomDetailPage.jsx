@@ -87,7 +87,7 @@ const RoomDetailPage = () => {
               <span>이용 문의</span>
               <div>
                 <p>Tel. 033.673.7000</p>
-                <p>Mail. rsvn@chestertons.co.kr</p>
+                <p>Mail. naksan_rsvn@chestertons.co.kr</p>
               </div>
             </li>
           </ul>
