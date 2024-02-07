@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from './HomePage.module.scss';
 import Reservation from '@components/home_page/Reservation.jsx';
 import { createPortal } from 'react-dom';

@@ -255,7 +255,7 @@
 
 
 .mobile-nav{
-  height: calc(100dvh - 54px);
+  height: calc(var(--vh) * 100 - 54px);
   left: -100%;
   width: 100%;
   position: fixed;

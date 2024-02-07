@@ -1,5 +1,9 @@
 @import 'reset', '_animation', 'class';
 
+:root{
+  --vh: 100vh;
+}
+
 
 $scroll-padding: 3px;
 // 스클롤바
@@ -39,7 +43,7 @@ body{
   font-size: rem(16);
   line-height: 1.5;
   &.overlay {
-    height: 100vh;
+    height: calc(var(--vh) * 100);
     overflow: hidden;
   }
 }

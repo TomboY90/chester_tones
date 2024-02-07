@@ -174,7 +174,7 @@ html{
 
 main{
     position: relative;
-    min-height: calc(100vh - 348px);
+    min-height: calc((var(--vh) * 100) - 348px);
 }
 
 .bread-crumb{
