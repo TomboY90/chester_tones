@@ -30,7 +30,6 @@
 
   .reservation-button{
     all:unset;
-    display: none;
     width: 140px;
     height: 40px;
     cursor: pointer;
@@ -52,7 +51,6 @@
       }
 
     .reservation-button{
-      display: none;
       background: #7dcaae;
       color: rgba($color:$white, $alpha:0.95);
     }
@@ -208,7 +206,6 @@
   }
   .reservation-button{
     all:unset;
-    display: none;
     width: 100px;
     height: 40px;
     cursor: pointer;
@@ -233,7 +230,6 @@
     }
 
     .reservation-button {
-      display: none;
       background: #7dcaae;
       color: rgba($color: $white, $alpha: 0.95);
     }
@@ -250,9 +246,6 @@
       left: 50%;
       transform: translateX(-50%);
     }
-    >.reservation-button{
-      display: none;
-    }
   }
 
   @include mobile{
@@ -262,7 +255,7 @@
 
 
 .mobile-nav{
-  height: calc(100vh - 54px);
+  height: calc(100dvh - 54px);
   left: -100%;
   width: 100%;
   position: fixed;
@@ -349,7 +342,6 @@
   }
 
   .reservation-button{
-    display: none;
     position: absolute;
     bottom: 32px;
     left: 20px;

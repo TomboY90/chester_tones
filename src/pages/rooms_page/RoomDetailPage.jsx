@@ -32,9 +32,9 @@ const RoomDetailPage = () => {
             <li onClick={() => navigate(`/rooms/${id}`)}>{roomData[id].enName.toUpperCase()}</li>
             <li>{roomData[id].rooms[sub].enName.toUpperCase()}</li>
           </ul>
-          {/*<p className="small-line-button" onClick={linkTo}>*/}
-          {/*  객실 예약하러 가기*/}
-          {/*</p>*/}
+          <p className="small-line-button" onClick={linkTo}>
+            객실 예약하러 가기
+          </p>
         </div>
 
         <ImgSlider imgNum={room.imgNum} />
