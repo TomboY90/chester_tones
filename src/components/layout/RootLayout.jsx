@@ -20,6 +20,7 @@ const RootLayout = () => {
   }, [location.pathname]);
 
   useEffect(() => {
+    setVh();
     window.addEventListener('resize', setVh);
     return () => window.removeEventListener('resize', setVh);
   }, []);
