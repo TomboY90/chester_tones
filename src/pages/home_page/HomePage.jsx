@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import classes from './HomePage.module.scss';
 import Reservation from '@components/home_page/Reservation.jsx';
 import { createPortal } from 'react-dom';
 import ModalComponent, { ModalOverlay } from '@components/ui/ModalComponent.jsx';
-import centerPop from '@assets/images/bg/center_pop.png';
+import leftPop from '@assets/images/bg/center_pop.png';
+import centerPop from '@assets/images/bg/main_pop.jpg';
 import rightPop from '@assets/images/bg/right_pop.png';
 const HomePage = () => {
+  const [isLeftPop, setIsLeftPop] = useState(true);
   const [isCenterPop, setIsCenterPop] = useState(true);
   const [isRightPop, setIsRightPop] = useState(true);
 
@@ -30,23 +32,23 @@ const HomePage = () => {
           <h2 className={`${classes['main-text']} ${classes.temp}`}>COMING SOON</h2>
         </article>
       </section>*/}
-      {(isCenterPop || isRightPop) &&
+      {(isLeftPop || isCenterPop || isRightPop) &&
         createPortal(
           <ModalOverlay>
-            {isCenterPop && (
+            {isLeftPop && (
               <ModalComponent
-                img={centerPop}
+                position="left"
+                img={leftPop}
                 onClick={() =>
                   moveTo(
                     'https://docs.google.com/forms/d/e/1FAIpQLScBU2aTPm60OIcpgce00J3XBtCcRijKAx3M9bY0sJqaNQXB8w/viewform'
                   )
                 }
-                onClose={() => setIsCenterPop(false)}
+                onClose={() => setIsLeftPop(false)}
               />
             )}
             {isRightPop && (
               <ModalComponent
-                position="right"
                 img={rightPop}
                 onClick={() =>
                   moveTo(
@@ -54,6 +56,14 @@ const HomePage = () => {
                   )
                 }
                 onClose={() => setIsRightPop(false)}
+              />
+            )}
+            {isCenterPop && (
+              <ModalComponent
+                position="right"
+                img={centerPop}
+                onClick={() => moveTo('https://booking.dowhat.co.kr/web/12')}
+                onClose={() => setIsCenterPop(false)}
               />
             )}
           </ModalOverlay>,
