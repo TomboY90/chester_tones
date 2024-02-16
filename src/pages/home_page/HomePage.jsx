@@ -4,15 +4,40 @@ import Reservation from '@components/home_page/Reservation.jsx';
 import { createPortal } from 'react-dom';
 import ModalComponent, { ModalOverlay } from '@components/ui/ModalComponent.jsx';
 import leftPop from '@assets/images/bg/center_pop.png';
-import centerPop from '@assets/images/bg/main_pop.jpg';
-import rightPop from '@assets/images/bg/right_pop.png';
+import mainPop from '@assets/images/bg/main_pop.jpg';
+import packagePop from '@assets/images/bg/package_pop.jpg';
 const HomePage = () => {
-  const [isLeftPop, setIsLeftPop] = useState(true);
-  const [isCenterPop, setIsCenterPop] = useState(true);
-  const [isRightPop, setIsRightPop] = useState(true);
+  const [popList, setPopList] = useState([
+    {
+      visible: true,
+      img: leftPop,
+      action: () =>
+        moveTo(
+          'https://docs.google.com/forms/d/e/1FAIpQLScBU2aTPm60OIcpgce00J3XBtCcRijKAx3M9bY0sJqaNQXB8w/viewform'
+        ),
+    },
+    {
+      visible: true,
+      img: mainPop,
+      action: () => moveTo('https://booking.dowhat.co.kr/web/12'),
+    },
+    {
+      visible: true,
+      img: packagePop,
+      action: () => {
+        document.location.href = 'tel:033-673-7000';
+      },
+    },
+  ]);
 
   const moveTo = (url) => {
     window.open(url, '_blank');
+  };
+
+  const popClose = (index) => {
+    const newPop = [...popList];
+    newPop[index].visible = false;
+    setPopList(newPop);
   };
 
   return (
@@ -32,40 +57,20 @@ const HomePage = () => {
           <h2 className={`${classes['main-text']} ${classes.temp}`}>COMING SOON</h2>
         </article>
       </section>*/}
-      {(isLeftPop || isCenterPop || isRightPop) &&
+      {popList.filter((item) => item.visible).length > 0 &&
         createPortal(
           <ModalOverlay>
-            {isLeftPop && (
+            {popList.map((pop, index) => (
               <ModalComponent
-                position="left"
-                img={leftPop}
-                onClick={() =>
-                  moveTo(
-                    'https://docs.google.com/forms/d/e/1FAIpQLScBU2aTPm60OIcpgce00J3XBtCcRijKAx3M9bY0sJqaNQXB8w/viewform'
-                  )
-                }
-                onClose={() => setIsLeftPop(false)}
+                visible={pop.visible}
+                key={index}
+                num={index}
+                img={pop.img}
+                expire={pop.expire}
+                onClick={pop.action}
+                onClose={() => popClose(index)}
               />
-            )}
-            {isRightPop && (
-              <ModalComponent
-                img={rightPop}
-                onClick={() =>
-                  moveTo(
-                    'https://docs.google.com/forms/d/e/1FAIpQLSdEkUr1efN4v2uwSQuHgVImFMGkoNLyv85IYBvHSIvY_HAKMQ/viewform'
-                  )
-                }
-                onClose={() => setIsRightPop(false)}
-              />
-            )}
-            {isCenterPop && (
-              <ModalComponent
-                position="right"
-                img={centerPop}
-                onClick={() => moveTo('https://booking.dowhat.co.kr/web/12')}
-                onClose={() => setIsCenterPop(false)}
-              />
-            )}
+            ))}
           </ModalOverlay>,
           document.getElementById('modal')
         )}

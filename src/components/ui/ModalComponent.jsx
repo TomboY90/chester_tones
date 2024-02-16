@@ -17,7 +17,7 @@ export const ModalOverlay = ({ children }) => {
   );
 };
 
-const ModalComponent = ({ img, onClick, expire, position, onClose }) => {
+const ModalComponent = ({ visible, img, onClick, expire, num, onClose }) => {
   const { setCookie, getCookie } = useCookie();
 
   // 쿠키의 유효기한을 지정하는 함수
@@ -30,12 +30,12 @@ const ModalComponent = ({ img, onClick, expire, position, onClose }) => {
 
   const saveCookie = () => {
     const expires = getExpiredDate(1);
-    setCookie(`LeBleu_popup_${position}`, true, { path: '', expires });
+    setCookie(`LeBleu_popup_${num}`, true, { path: '', expires });
     onClose();
   };
 
   useEffect(() => {
-    if (getCookie(`LeBleu_popup_${position}`)) {
+    if (getCookie(`LeBleu_popup_${num}`)) {
       onClose();
     }
     if (expire && dayjs().isAfter(dayjs(expire))) {
@@ -43,8 +43,10 @@ const ModalComponent = ({ img, onClick, expire, position, onClose }) => {
     }
   }, []);
 
+  if (!visible) return;
+
   return (
-    <div className={`${classes['modal-wrapper']} ${position ? classes[position] : ''}`}>
+    <div className={`${classes['modal-wrapper']}`}>
       <div onClick={onClick} className={classes['img-wrapper']}>
         <img src={img} alt="" />
       </div>
