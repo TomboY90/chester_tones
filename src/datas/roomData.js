@@ -91,7 +91,7 @@ export const roomData = [
     rooms: [
       {
         id: 0,
-        korName: '투룸 슈페리어 더블',
+        korName: '투룸 슈페리어 더블 마운틴',
         enName: 'Two Room Superior Double',
         exSize: '47.78㎡ (14.45평)',
         saSize: '92.15㎡ (27.87평)',
@@ -104,7 +104,7 @@ export const roomData = [
       },
       {
         id: 1,
-        korName: '투룸 슈페리어 패밀리',
+        korName: '투룸 슈페리어 패밀리 오션',
         enName: 'Two Room Superior Family',
         exSize: '50.72㎡ (15.34평)',
         saSize: '97.82㎡ (29.59평)',
